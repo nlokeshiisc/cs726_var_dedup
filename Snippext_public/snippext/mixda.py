@@ -26,6 +26,10 @@ classifier_criterion = nn.CrossEntropyLoss()
 # criterion for regression
 regression_criterion = nn.MSELoss()
 
+# Lokesh: Add MSE Loss for self supervision
+variation_attn_criterion = nn.MSELoss(reduction="none")
+
+
 def mixda(model, batch, alpha_aug=0.4):
     """Perform one iteration of MixDA
 
@@ -37,7 +41,7 @@ def mixda(model, batch, alpha_aug=0.4):
     Returns:
         Tensor: the loss (of 0-d)
     """
-    _, x, _, _, mask, y, _, taskname = batch
+    _, x, _, _, mask, y, y_self_sup, _, taskname = batch
     taskname = taskname[0]
     # two batches
     batch_size = x.size()[0] // 2
@@ -51,9 +55,9 @@ def mixda(model, batch, alpha_aug=0.4):
     x = x[:batch_size]
 
     # back prop
-    logits, y, _ = model(x, y,
-                         augment_batch=(aug_x, aug_lam),
-                         task=taskname)
+    logits, y, _, y_self_sup, variational_attn = model(x, y, y_self_sup,
+                                                         augment_batch=(aug_x, aug_lam),
+                                                         task=taskname)
     if 'sts-b' in taskname:
         logits = logits.view(-1)
     else:
@@ -75,6 +79,15 @@ def mixda(model, batch, alpha_aug=0.4):
     # mix the labels
     loss = criterion(logits, y) * aug_lam + \
            criterion(logits, aug_y) * (1 - aug_lam)
+
+    mask = torch.Tensor(mask.float()).to("cuda")
+    self_sup_loss = variation_attn_criterion(y_self_sup, variational_attn.squeeze() * mask)
+    self_sup_loss = torch.mean(self_sup_loss)
+
+
+    # Lokesh: change alpha here for sensitivity analysis
+    alpha = 0
+    loss = loss + (alpha * self_sup_loss)
 
     return loss
 
@@ -141,7 +154,7 @@ def train(model, l_set, aug_set, optimizer,
     model.train()
     for i, batch in enumerate(mixda_batches):
         # for monitoring
-        words, x, is_heads, tags, mask, y, seqlens, taskname = batch
+        words, x, is_heads, tags, mask, y, y_self_sup, seqlens, taskname = batch
         taskname = taskname[0]
         _y = y
 

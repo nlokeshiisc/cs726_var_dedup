@@ -88,7 +88,7 @@ class MultiTaskNet(nn.Module):
             self.module_dict['fc_cls_var'] = nn.Linear(hidden_size*2, vocab_size)
 
 
-    def forward(self, x, y,
+    def forward(self, x, y, y_self_sup=None,
                 augment_batch=None,
                 aug_enc=None,
                 second_batch=None,
@@ -115,6 +115,11 @@ class MultiTaskNet(nn.Module):
         # move input to GPU
         x = x.to(self.device)
         y = y.to(self.device)
+
+        # Lokesh: Push y_self_sup also to device
+        if y_self_sup is not None:
+            y_self_sup = y_self_sup.to(self.device)
+
         if second_batch != None:
             index, lam = second_batch
             lam = torch.tensor(lam).to(self.device)
@@ -217,6 +222,12 @@ class MultiTaskNet(nn.Module):
             # Lokesh: Get the variational Logits using variational embedding
             logits_variational = fc_cls_var(variational_emb)
 
+
+            # Return variational_attn for self supervision
+            # Pass the variational attn of the augmented batch also
+            if augment_batch != None:
+                variational_attn = torch.cat([variational_attn, variational_attn_aug], dim=0)
+
             if 'sts-b' in task:
                 y_hat = logits
                 y_hat_var = logits_variational
@@ -226,4 +237,4 @@ class MultiTaskNet(nn.Module):
             if get_enc:
                 return logits_variational, y, y_hat_var, pooled_output
             else:
-                return logits_variational, y, y_hat_var
+                return logits_variational, y, y_hat_var, y_self_sup, variational_attn

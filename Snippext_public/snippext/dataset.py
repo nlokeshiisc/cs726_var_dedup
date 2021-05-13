@@ -322,11 +322,11 @@ class SnippextDataset(data.Dataset):
                for sample in batch] # 0: <pad>
 
         # get maximal sequence length
-        seqlens = f(6)
+        seqlens = f(7)
         maxlen = np.array(seqlens).max()
 
         # get task name
-        name = f(7)
+        name = f(8)
 
         words = f(0)
         x = g(1, maxlen, 0)
@@ -338,9 +338,13 @@ class SnippextDataset(data.Dataset):
         else:
             y = f(5)
 
+        # Pad the y_self_sup also with zeros to the max length
+        y_self_sup = g(6, maxlen, 0)
+        y_self_sup = torch.Tensor(y_self_sup)
+
         f = torch.LongTensor
         if isinstance(y[0], float):
             y = torch.Tensor(y)
         else:
             y = torch.LongTensor(y)
-        return words, f(x), is_heads, tags, f(mask), y, seqlens, name
+        return words, f(x), is_heads, tags, f(mask), y, y_self_sup, seqlens, name
