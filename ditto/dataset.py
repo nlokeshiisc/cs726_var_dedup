@@ -61,6 +61,11 @@ class DittoDataset(SnippextDataset):
                 else:
                     self.pos_sents.append(sid)
 
+        # Lokesh: This is for self supervision input
+        self.special_tokens = ["col", "val", "title", "brand", "modelno", "price"]
+        self.common_wt = 0.3
+        self.diff_wt = 0.6
+
 
     def read_classification_file(self, path):
         """Read a train/eval classification dataset from file
@@ -144,6 +149,31 @@ class DittoDataset(SnippextDataset):
                 print(words)
                 x = self.tokenizer.encode(text=original, add_special_tokens=True, truncation="longest_first", max_length=self.max_len)
 
+        # Lokesh: Compute the heuristic based self supervision here
+        
+        # Tokens retained after bert based encoding, truncation etc.
+        filtered_tokens = self.tokenizer.decode(x)
+        filtered_sents = filtered_tokens.split(" [SEP] ")
+        filtered_sents[0] = filtered_sents[0] + " [SEP] "
+        sent_0_tokens = self.tokenizer.tokenize(filtered_sents[0])
+        sent_1_tokens = self.tokenizer.tokenize(filtered_sents[1])
+        
+        diff_tokens = set(sent_0_tokens).symmetric_difference(set(sent_1_tokens))
+        diff_tokens = list(diff_tokens)
+
+        y_self_sup = []
+        for token in sent_0_tokens + sent_1_tokens:
+            if token in self.special_tokens:
+                y_self_sup.append(0.0)
+            elif token in diff_tokens and token.strip() not in ["[SEP]"]:
+                y_self_sup.append(self.diff_wt)
+            else:
+                y_self_sup.append(self.common_wt)
+        
+        assert len(y_self_sup) == len(x), "Lokesh: Is there somethig wrong with the self supervision logic?"
+
+
+
         y = self.tag2idx[tags] # label
         is_heads = [1] * len(x)
         mask = [1] * len(x)
@@ -153,5 +183,5 @@ class DittoDataset(SnippextDataset):
         # seqlen
         seqlen = len(mask)
 
-        return words, x, is_heads, tags, mask, y, seqlen, self.taskname
+        return words, x, is_heads, tags, mask, y, y_self_sup, seqlen, self.taskname
 
