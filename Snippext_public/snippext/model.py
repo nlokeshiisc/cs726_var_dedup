@@ -178,9 +178,11 @@ class MultiTaskNet(nn.Module):
 
             if augment_batch != None:
                 if aug_enc is None:
-                    aug_enc = self.bert(aug_x)[0][:, 0, :]
+                    output_aug = self.bert(aug_x)
+                    pooled_output_aug = output_aug[0][:, 0, :]
+                    pooled_output_aug = dropout(pooled_output_aug)
                 pooled_output[:aug_x.shape[0]] *= aug_lam
-                pooled_output[:aug_x.shape[0]] += aug_enc * (1 - aug_lam)
+                pooled_output[:aug_x.shape[0]] += pooled_output_aug * (1 - aug_lam)
 
             if second_batch != None:
                 pooled_output = pooled_output * lam + pooled_output[index] * (1 - lam)
@@ -195,6 +197,20 @@ class MultiTaskNet(nn.Module):
             variational_emb = torch.matmul(variational_attn, output[0])
             variational_emb = variational_emb.squeeze(dim=1)
             variational_emb = variational_emb / torch.norm(variational_emb, dim=0)
+
+
+            # Lokesh: Compute variational embedding also as a convex combination
+            if augment_batch != None:
+                variational_attn_aug = var_fc(output_aug[0])
+                variational_attn_aug = torch.sigmoid(variational_attn_aug)
+                variational_attn_aug = variational_attn_aug.reshape((variational_attn_aug.shape[0], 
+                                                variational_attn_aug.shape[2], variational_attn_aug.shape[1]))
+                variational_emb_aug = torch.matmul(variational_attn_aug, output_aug[0])
+                variational_emb_aug = variational_emb_aug.squeeze(dim=1)
+                variational_emb_aug = variational_emb_aug / torch.norm(variational_emb_aug, dim=0)
+
+                variational_emb = (variational_emb * aug_lam) + ((1-aug_lam) * variational_emb_aug) 
+
 
             variational_emb = torch.cat([pooled_output, variational_emb], dim=1)
 
