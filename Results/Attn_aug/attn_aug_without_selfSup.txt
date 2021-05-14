@@ -1,0 +1,958 @@
+/content/drive/MyDrive/ditto/ditto
+2021-05-14 07:07:20.535045: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.11.0
+Downloading: 100% 232k/232k [00:00<00:00, 899kB/s] 
+Downloading: 100% 442/442 [00:00<00:00, 371kB/s]
+Downloading: 100% 268M/268M [00:04<00:00, 59.9MB/s]
+Selected optimization level O2:  FP16 training with FP32 batchnorm and FP32 master weights.
+
+Defaults for this optimization level are:
+enabled                : True
+opt_level              : O2
+cast_model_type        : torch.float16
+patch_torch_functions  : False
+keep_batchnorm_fp32    : True
+master_weights         : True
+loss_scale             : dynamic
+Processing user overrides (additional kwargs that are not None)...
+After processing overrides, optimization options are:
+enabled                : True
+opt_level              : O2
+cast_model_type        : torch.float16
+patch_torch_functions  : False
+keep_batchnorm_fp32    : True
+master_weights         : True
+loss_scale             : dynamic
+Warning:  multi_tensor_applier fused unscale kernel is unavailable, possibly because apex was installed without --cuda_ext --cpp_ext. Using Python fallback.  Original ImportError was: ModuleNotFoundError("No module named 'amp_C'")
+/usr/local/lib/python3.7/dist-packages/apex/amp/_initialize.py:25: UserWarning: An input tensor was not cuda.
+  warnings.warn("An input tensor was not cuda.")
+=====sanity check======
+words: COL title VAL buffalo technology ministation metro 1 tb usb 2.0 portable external hard drive with integrated flex cable encryption and turbopc hd-pxt1tu2 b black COL category VAL hard drives COL brand VAL buffalo technology COL modelno VAL hdpxt1tu2b COL price VAL 99.82  [SEP] COL title VAL buffalo technology drivestation datavault 2 tb usb 2.0 desktop external hard drive hd-cxt2 .0 tu2 black COL category VAL external hard drives COL brand VAL buffalo technology COL modelno VAL hd-cxt2 .0 tu2 COL price VAL 132.64 
+x: [  101  8902  2516 11748  6901  2974  7163 20100  6005  1015 26419 18833
+  1016  1012  1014 12109  6327  2524  3298  2007  6377 23951  5830 21999
+  1998 15386 15042 10751  1011  1052 18413  2487  8525  2475  1038  2304
+  8902  4696 11748  2524  9297  8902  4435 11748  6901  2974  8902  2944
+  3630 11748 10751  2361 18413  2487  8525  2475  2497  8902  3976 11748
+  5585  1012  6445   102  8902  2516 11748  6901  2974  9297 12516  2951
+  3567 11314  1016 26419 18833  1016  1012  1014 15363  6327  2524  3298
+ 10751  1011  1039 18413  2475  1012  1014 10722  2475  2304  8902  4696
+ 11748  6327  2524  9297  8902  4435 11748  6901  2974  8902  2944  3630
+ 11748 10751  1011  1039 18413  2475  1012  1014 10722  2475  8902  3976
+ 11748 14078  1012  4185   102]
+tokens: ['[CLS]', 'col', 'title', 'val', 'buffalo', 'technology', 'mini', '##station', 'metro', '1', 'tb', 'usb', '2', '.', '0', 'portable', 'external', 'hard', 'drive', 'with', 'integrated', 'flex', 'cable', 'encryption', 'and', 'turbo', '##pc', 'hd', '-', 'p', '##xt', '##1', '##tu', '##2', 'b', 'black', 'col', 'category', 'val', 'hard', 'drives', 'col', 'brand', 'val', 'buffalo', 'technology', 'col', 'model', '##no', 'val', 'hd', '##p', '##xt', '##1', '##tu', '##2', '##b', 'col', 'price', 'val', '99', '.', '82', '[SEP]', 'col', 'title', 'val', 'buffalo', 'technology', 'drives', '##tation', 'data', '##va', '##ult', '2', 'tb', 'usb', '2', '.', '0', 'desktop', 'external', 'hard', 'drive', 'hd', '-', 'c', '##xt', '##2', '.', '0', 'tu', '##2', 'black', 'col', 'category', 'val', 'external', 'hard', 'drives', 'col', 'brand', 'val', 'buffalo', 'technology', 'col', 'model', '##no', 'val', 'hd', '-', 'c', '##xt', '##2', '.', '0', 'tu', '##2', 'col', 'price', 'val', '132', '.', '64', '[SEP]']
+is_heads: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+y: 0
+tags: 0
+mask: tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1])
+seqlen: 125
+task_name: Structured/Walmart-Amazon
+=======================
+step: 0, task: Structured/Walmart-Amazon, loss: 0.7354276180267334
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
+step: 10, task: Structured/Walmart-Amazon, loss: 0.685199499130249
+step: 20, task: Structured/Walmart-Amazon, loss: 0.6805777549743652
+step: 30, task: Structured/Walmart-Amazon, loss: 0.6829789280891418
+step: 40, task: Structured/Walmart-Amazon, loss: 0.6737906336784363
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
+step: 50, task: Structured/Walmart-Amazon, loss: 0.5981720089912415
+step: 60, task: Structured/Walmart-Amazon, loss: 0.703387439250946
+step: 70, task: Structured/Walmart-Amazon, loss: 0.7018768787384033
+=========eval at epoch=1=========
+Validation:
+=============Structured/Walmart-Amazon==================
+accuracy=0.559
+precision=0.137
+recall=0.694
+f1=0.229
+======================================
+Test:
+=============Structured/Walmart-Amazon==================
+accuracy=0.534
+precision=0.129
+recall=0.684
+f1=0.217
+======================================
+=====sanity check======
+words: COL title VAL buddy products dr. pocket steel 3-pocket wall file black COL category VAL stationery & office machinery COL brand VAL buddy products COL modelno VAL 52104 COL price VAL 51.94  [SEP] COL title VAL new-buddy products 52104 - dr. pocket steel three pocket wall file letter black - bdy52104 COL category VAL storage presentation materials COL brand VAL buddy COL modelno VAL  COL price VAL 47.49 
+x: [  101  8902  2516 11748  8937  3688  2852  1012  4979  3886  1017  1011
+  4979  2813  5371  2304  8902  4696 11748  2276  7301  1004  2436 10394
+  8902  4435 11748  8937  3688  8902  2944  3630 11748 26963  2692  2549
+  8902  3976 11748  4868  1012  6365   102  8902  2516 11748  2047  1011
+  8937  3688 26963  2692  2549  1011  2852  1012  4979  3886  2093  4979
+  2813  5371  3661  2304  1011  1038  5149 25746 10790  2549  8902  4696
+ 11748  5527  8312  4475  8902  4435 11748  8937  8902  2944  3630 11748
+  8902  3976 11748  4700  1012  4749   102]
+tokens: ['[CLS]', 'col', 'title', 'val', 'buddy', 'products', 'dr', '.', 'pocket', 'steel', '3', '-', 'pocket', 'wall', 'file', 'black', 'col', 'category', 'val', 'station', '##ery', '&', 'office', 'machinery', 'col', 'brand', 'val', 'buddy', 'products', 'col', 'model', '##no', 'val', '521', '##0', '##4', 'col', 'price', 'val', '51', '.', '94', '[SEP]', 'col', 'title', 'val', 'new', '-', 'buddy', 'products', '521', '##0', '##4', '-', 'dr', '.', 'pocket', 'steel', 'three', 'pocket', 'wall', 'file', 'letter', 'black', '-', 'b', '##dy', '##52', '##10', '##4', 'col', 'category', 'val', 'storage', 'presentation', 'materials', 'col', 'brand', 'val', 'buddy', 'col', 'model', '##no', 'val', 'col', 'price', 'val', '47', '.', '49', '[SEP]']
+is_heads: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+y: 1
+tags: 1
+mask: tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+seqlen: 91
+task_name: Structured/Walmart-Amazon
+=======================
+step: 0, task: Structured/Walmart-Amazon, loss: 0.6403371095657349
+step: 10, task: Structured/Walmart-Amazon, loss: 0.5530310869216919
+step: 20, task: Structured/Walmart-Amazon, loss: 0.6255151033401489
+step: 30, task: Structured/Walmart-Amazon, loss: 0.6370972990989685
+step: 40, task: Structured/Walmart-Amazon, loss: 0.6359655261039734
+step: 50, task: Structured/Walmart-Amazon, loss: 0.46858522295951843
+step: 60, task: Structured/Walmart-Amazon, loss: 0.5274543166160583
+step: 70, task: Structured/Walmart-Amazon, loss: 0.3601940870285034
+=========eval at epoch=2=========
+Validation:
+=============Structured/Walmart-Amazon==================
+accuracy=0.467
+precision=0.146
+recall=0.964
+f1=0.254
+======================================
+Test:
+=============Structured/Walmart-Amazon==================
+accuracy=0.476
+precision=0.148
+recall=0.959
+f1=0.256
+======================================
+=====sanity check======
+words: COL title VAL atrend-bbox a361-10cp b box series single speaker COL category VAL car stereos COL brand VAL atrend COL modelno VAL a361-10cp COL price VAL 56.88  [SEP] COL title VAL atrend-bbox a361-10cp b box series single speaker for ford f150 super crew cab 2009 and up 10-inch COL category VAL coaxial speakers COL brand VAL atrend-bbox COL modelno VAL a361-10cp COL price VAL 42.37 
+x: [  101  8902  2516 11748  2012  7389  2094  1011 22861 11636  1037 21619
+  2487  1011  2184 21906  1038  3482  2186  2309  5882  8902  4696 11748
+  2482 12991  2015  8902  4435 11748  2012  7389  2094  8902  2944  3630
+ 11748  1037 21619  2487  1011  2184 21906  8902  3976 11748  5179  1012
+  6070   102  8902  2516 11748  2012  7389  2094  1011 22861 11636  1037
+ 21619  2487  1011  2184 21906  1038  3482  2186  2309  5882  2005  4811
+ 20069 12376  3565  3626  9298  2268  1998  2039  2184  1011  4960  8902
+  4696 11748 28155 14787  2140  7492  8902  4435 11748  2012  7389  2094
+  1011 22861 11636  8902  2944  3630 11748  1037 21619  2487  1011  2184
+ 21906  8902  3976 11748  4413  1012  4261   102]
+tokens: ['[CLS]', 'col', 'title', 'val', 'at', '##ren', '##d', '-', 'bb', '##ox', 'a', '##36', '##1', '-', '10', '##cp', 'b', 'box', 'series', 'single', 'speaker', 'col', 'category', 'val', 'car', 'stereo', '##s', 'col', 'brand', 'val', 'at', '##ren', '##d', 'col', 'model', '##no', 'val', 'a', '##36', '##1', '-', '10', '##cp', 'col', 'price', 'val', '56', '.', '88', '[SEP]', 'col', 'title', 'val', 'at', '##ren', '##d', '-', 'bb', '##ox', 'a', '##36', '##1', '-', '10', '##cp', 'b', 'box', 'series', 'single', 'speaker', 'for', 'ford', 'f1', '##50', 'super', 'crew', 'cab', '2009', 'and', 'up', '10', '-', 'inch', 'col', 'category', 'val', 'coa', '##xia', '##l', 'speakers', 'col', 'brand', 'val', 'at', '##ren', '##d', '-', 'bb', '##ox', 'col', 'model', '##no', 'val', 'a', '##36', '##1', '-', '10', '##cp', 'col', 'price', 'val', '42', '.', '37', '[SEP]']
+is_heads: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+y: 1
+tags: 1
+mask: tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+seqlen: 116
+task_name: Structured/Walmart-Amazon
+=======================
+step: 0, task: Structured/Walmart-Amazon, loss: 0.518333911895752
+step: 10, task: Structured/Walmart-Amazon, loss: 0.5790901184082031
+step: 20, task: Structured/Walmart-Amazon, loss: 0.4714432954788208
+step: 30, task: Structured/Walmart-Amazon, loss: 0.41689300537109375
+step: 40, task: Structured/Walmart-Amazon, loss: 0.3455911874771118
+step: 50, task: Structured/Walmart-Amazon, loss: 0.34934312105178833
+step: 60, task: Structured/Walmart-Amazon, loss: 0.6710433959960938
+step: 70, task: Structured/Walmart-Amazon, loss: 0.3032000958919525
+=========eval at epoch=3=========
+Validation:
+=============Structured/Walmart-Amazon==================
+accuracy=0.743
+precision=0.261
+recall=0.943
+f1=0.409
+======================================
+Test:
+=============Structured/Walmart-Amazon==================
+accuracy=0.734
+precision=0.255
+recall=0.948
+f1=0.401
+======================================
+=====sanity check======
+words: COL title VAL bluelounge cabledrop black COL category VAL electronics - general COL brand VAL bluelounge COL modelno VAL cd-bl COL price VAL 10.0  [SEP] COL title VAL blue lounge design cd-bl cabledrop cable management system for all cables up to 5 16-inch - black COL category VAL wire management COL brand VAL bluelounge COL modelno VAL cd-bl COL price VAL 9.95 
+x: [  101  8902  2516 11748  2630 23743 15465  5830 25711  2304  8902  4696
+ 11748  8139  1011  2236  8902  4435 11748  2630 23743 15465  8902  2944
+  3630 11748  3729  1011  1038  2140  8902  3976 11748  2184  1012  1014
+   102  8902  2516 11748  2630 11549  2640  3729  1011  1038  2140  5830
+ 25711  5830  2968  2291  2005  2035 15196  2039  2000  1019  2385  1011
+  4960  1011  2304  8902  4696 11748  7318  2968  8902  4435 11748  2630
+ 23743 15465  8902  2944  3630 11748  3729  1011  1038  2140  8902  3976
+ 11748  1023  1012  5345   102]
+tokens: ['[CLS]', 'col', 'title', 'val', 'blue', '##lou', '##nge', 'cable', '##drop', 'black', 'col', 'category', 'val', 'electronics', '-', 'general', 'col', 'brand', 'val', 'blue', '##lou', '##nge', 'col', 'model', '##no', 'val', 'cd', '-', 'b', '##l', 'col', 'price', 'val', '10', '.', '0', '[SEP]', 'col', 'title', 'val', 'blue', 'lounge', 'design', 'cd', '-', 'b', '##l', 'cable', '##drop', 'cable', 'management', 'system', 'for', 'all', 'cables', 'up', 'to', '5', '16', '-', 'inch', '-', 'black', 'col', 'category', 'val', 'wire', 'management', 'col', 'brand', 'val', 'blue', '##lou', '##nge', 'col', 'model', '##no', 'val', 'cd', '-', 'b', '##l', 'col', 'price', 'val', '9', '.', '95', '[SEP]']
+is_heads: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+y: 1
+tags: 1
+mask: tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+seqlen: 89
+task_name: Structured/Walmart-Amazon
+=======================
+step: 0, task: Structured/Walmart-Amazon, loss: 0.23510754108428955
+step: 10, task: Structured/Walmart-Amazon, loss: 0.2897680699825287
+step: 20, task: Structured/Walmart-Amazon, loss: 0.11090710014104843
+step: 30, task: Structured/Walmart-Amazon, loss: 0.4080219268798828
+step: 40, task: Structured/Walmart-Amazon, loss: 0.22184191644191742
+step: 50, task: Structured/Walmart-Amazon, loss: 0.12211468070745468
+step: 60, task: Structured/Walmart-Amazon, loss: 0.25469186902046204
+step: 70, task: Structured/Walmart-Amazon, loss: 0.23226657509803772
+=========eval at epoch=4=========
+Validation:
+=============Structured/Walmart-Amazon==================
+accuracy=0.896
+precision=0.471
+recall=0.886
+f1=0.615
+======================================
+Test:
+=============Structured/Walmart-Amazon==================
+accuracy=0.944
+precision=0.856
+recall=0.492
+f1=0.625
+======================================
+=====sanity check======
+words: COL title VAL office star products 93 series leather visitors chair with loop arms black COL category VAL furniture COL brand VAL office star COL modelno VAL  COL price VAL 179.49  [SEP] COL title VAL office star ex81243 - 93 series leather visitors chair w loop arms black COL category VAL laptops COL brand VAL office star COL modelno VAL  COL price VAL  
+x: [  101  8902  2516 11748  2436  2732  3688  6109  2186  5898  5731  3242
+  2007  7077  2608  2304  8902  4696 11748  7390  8902  4435 11748  2436
+  2732  8902  2944  3630 11748  8902  3976 11748 20311  1012  4749   102
+  8902  2516 11748  2436  2732  4654  2620 12521 23777  1011  6109  2186
+  5898  5731  3242  1059  7077  2608  2304  8902  4696 11748 12191  2015
+  8902  4435 11748  2436  2732  8902  2944  3630 11748  8902  3976 11748
+   102]
+tokens: ['[CLS]', 'col', 'title', 'val', 'office', 'star', 'products', '93', 'series', 'leather', 'visitors', 'chair', 'with', 'loop', 'arms', 'black', 'col', 'category', 'val', 'furniture', 'col', 'brand', 'val', 'office', 'star', 'col', 'model', '##no', 'val', 'col', 'price', 'val', '179', '.', '49', '[SEP]', 'col', 'title', 'val', 'office', 'star', 'ex', '##8', '##12', '##43', '-', '93', 'series', 'leather', 'visitors', 'chair', 'w', 'loop', 'arms', 'black', 'col', 'category', 'val', 'laptop', '##s', 'col', 'brand', 'val', 'office', 'star', 'col', 'model', '##no', 'val', 'col', 'price', 'val', '[SEP]']
+is_heads: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+y: 1
+tags: 1
+mask: tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+seqlen: 73
+task_name: Structured/Walmart-Amazon
+=======================
+step: 0, task: Structured/Walmart-Amazon, loss: 0.22516605257987976
+step: 10, task: Structured/Walmart-Amazon, loss: 0.20815983414649963
+step: 20, task: Structured/Walmart-Amazon, loss: 0.09308596700429916
+step: 30, task: Structured/Walmart-Amazon, loss: 0.1303814947605133
+step: 40, task: Structured/Walmart-Amazon, loss: 0.22914710640907288
+step: 50, task: Structured/Walmart-Amazon, loss: 0.31728142499923706
+step: 60, task: Structured/Walmart-Amazon, loss: 0.17105618119239807
+step: 70, task: Structured/Walmart-Amazon, loss: 0.08646330237388611
+=========eval at epoch=5=========
+Validation:
+=============Structured/Walmart-Amazon==================
+accuracy=0.959
+precision=0.766
+recall=0.813
+f1=0.789
+======================================
+Test:
+=============Structured/Walmart-Amazon==================
+accuracy=0.960
+precision=0.773
+recall=0.813
+f1=0.793
+======================================
+=====sanity check======
+words: COL title VAL xerox 108r00602 maintenance kit COL category VAL printers COL brand VAL xerox COL modelno VAL 108r00602 COL price VAL 110.84  [SEP] COL title VAL xerox 108r00600 replacement maintenance kit for xerox phaser 4500 COL category VAL printer accessories COL brand VAL xerox COL modelno VAL 108r00600 COL price VAL  
+x: [  101  8902  2516 11748  1060 10624  2595 10715  2099  8889 16086  2475
+  6032  8934  8902  4696 11748 23557  8902  4435 11748  1060 10624  2595
+  8902  2944  3630 11748 10715  2099  8889 16086  2475  8902  3976 11748
+  7287  1012  6391   102  8902  2516 11748  1060 10624  2595 10715  2099
+  8889 16086  2692  6110  6032  8934  2005  1060 10624  2595  4403  2099
+ 10332  2692  8902  4696 11748 15041 16611  8902  4435 11748  1060 10624
+  2595  8902  2944  3630 11748 10715  2099  8889 16086  2692  8902  3976
+ 11748   102]
+tokens: ['[CLS]', 'col', 'title', 'val', 'x', '##ero', '##x', '108', '##r', '##00', '##60', '##2', 'maintenance', 'kit', 'col', 'category', 'val', 'printers', 'col', 'brand', 'val', 'x', '##ero', '##x', 'col', 'model', '##no', 'val', '108', '##r', '##00', '##60', '##2', 'col', 'price', 'val', '110', '.', '84', '[SEP]', 'col', 'title', 'val', 'x', '##ero', '##x', '108', '##r', '##00', '##60', '##0', 'replacement', 'maintenance', 'kit', 'for', 'x', '##ero', '##x', 'phase', '##r', '450', '##0', 'col', 'category', 'val', 'printer', 'accessories', 'col', 'brand', 'val', 'x', '##ero', '##x', 'col', 'model', '##no', 'val', '108', '##r', '##00', '##60', '##0', 'col', 'price', 'val', '[SEP]']
+is_heads: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+y: 0
+tags: 0
+mask: tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+seqlen: 86
+task_name: Structured/Walmart-Amazon
+=======================
+step: 0, task: Structured/Walmart-Amazon, loss: 0.05988532677292824
+step: 10, task: Structured/Walmart-Amazon, loss: 0.03472485393285751
+step: 20, task: Structured/Walmart-Amazon, loss: 0.05232855677604675
+step: 30, task: Structured/Walmart-Amazon, loss: 0.06692815572023392
+step: 40, task: Structured/Walmart-Amazon, loss: 0.2944056987762451
+step: 50, task: Structured/Walmart-Amazon, loss: 0.09136144816875458
+step: 60, task: Structured/Walmart-Amazon, loss: 0.043031804263591766
+step: 70, task: Structured/Walmart-Amazon, loss: 0.08763305842876434
+=========eval at epoch=6=========
+Validation:
+=============Structured/Walmart-Amazon==================
+accuracy=0.961
+precision=0.766
+recall=0.850
+f1=0.806
+======================================
+Test:
+=============Structured/Walmart-Amazon==================
+accuracy=0.958
+precision=0.756
+recall=0.819
+f1=0.786
+======================================
+=====sanity check======
+words: COL title VAL da-lite da-glas self trimming rear projection screen - 96 x 120 av format COL category VAL electronics - general COL brand VAL da-lite COL modelno VAL 27915 COL price VAL 7443.99  [SEP] COL title VAL da-lite 27639 da-glas standard rear projection screen 72 x 96 video format COL category VAL projection screens COL brand VAL da-lite COL modelno VAL  COL price VAL  
+x: [  101  8902  2516 11748  4830  1011  5507  2063  4830  1011  1043  8523
+  2969 12241  6562  4373 13996  3898  1011  5986  1060  6036 20704  4289
+  8902  4696 11748  8139  1011  2236  8902  4435 11748  4830  1011  5507
+  2063  8902  2944  3630 11748 25745 16068  8902  3976 11748  6356 23777
+  1012  5585   102  8902  2516 11748  4830  1011  5507  2063 25113 23499
+  4830  1011  1043  8523  3115  4373 13996  3898  5824  1060  5986  2678
+  4289  8902  4696 11748 13996 12117  8902  4435 11748  4830  1011  5507
+  2063  8902  2944  3630 11748  8902  3976 11748   102]
+tokens: ['[CLS]', 'col', 'title', 'val', 'da', '-', 'lit', '##e', 'da', '-', 'g', '##las', 'self', 'trim', '##ming', 'rear', 'projection', 'screen', '-', '96', 'x', '120', 'av', 'format', 'col', 'category', 'val', 'electronics', '-', 'general', 'col', 'brand', 'val', 'da', '-', 'lit', '##e', 'col', 'model', '##no', 'val', '279', '##15', 'col', 'price', 'val', '74', '##43', '.', '99', '[SEP]', 'col', 'title', 'val', 'da', '-', 'lit', '##e', '276', '##39', 'da', '-', 'g', '##las', 'standard', 'rear', 'projection', 'screen', '72', 'x', '96', 'video', 'format', 'col', 'category', 'val', 'projection', 'screens', 'col', 'brand', 'val', 'da', '-', 'lit', '##e', 'col', 'model', '##no', 'val', 'col', 'price', 'val', '[SEP]']
+is_heads: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+y: 0
+tags: 0
+mask: tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1])
+seqlen: 93
+task_name: Structured/Walmart-Amazon
+=======================
+step: 0, task: Structured/Walmart-Amazon, loss: 0.1945006549358368
+step: 10, task: Structured/Walmart-Amazon, loss: 0.04350760206580162
+step: 20, task: Structured/Walmart-Amazon, loss: 0.0857308879494667
+step: 30, task: Structured/Walmart-Amazon, loss: 0.549677312374115
+step: 40, task: Structured/Walmart-Amazon, loss: 0.040635667741298676
+step: 50, task: Structured/Walmart-Amazon, loss: 0.20708128809928894
+step: 60, task: Structured/Walmart-Amazon, loss: 0.3321853578090668
+step: 70, task: Structured/Walmart-Amazon, loss: 0.18087409436702728
+=========eval at epoch=7=========
+Validation:
+=============Structured/Walmart-Amazon==================
+accuracy=0.960
+precision=0.854
+recall=0.699
+f1=0.769
+======================================
+Test:
+=============Structured/Walmart-Amazon==================
+accuracy=0.961
+precision=0.880
+recall=0.684
+f1=0.770
+======================================
+=====sanity check======
+words: COL title VAL sony 39 lightweight camera and camcorder tripod vct-r100 COL category VAL camera and camcorder accessories COL brand VAL sony COL modelno VAL vctr100 COL price VAL 24.54  [SEP] COL title VAL sony vct-r100 lightweight compact tripod with 3-way pan tilt head COL category VAL digital camera accessories COL brand VAL sony COL modelno VAL vctr100 COL price VAL 24.54 
+x: [  101  8902  2516 11748  8412  4464 12038  4950  1998 11503 27108  4063
+  4440  7716 18315  2102  1011  1054 18613  8902  4696 11748  4950  1998
+ 11503 27108  4063 16611  8902  4435 11748  8412  8902  2944  3630 11748
+ 18315 16344 18613  8902  3976 11748  2484  1012  5139   102  8902  2516
+ 11748  8412 18315  2102  1011  1054 18613 12038  9233  4440  7716  2007
+  1017  1011  2126  6090 17010  2132  8902  4696 11748  3617  4950 16611
+  8902  4435 11748  8412  8902  2944  3630 11748 18315 16344 18613  8902
+  3976 11748  2484  1012  5139   102]
+tokens: ['[CLS]', 'col', 'title', 'val', 'sony', '39', 'lightweight', 'camera', 'and', 'cam', '##cor', '##der', 'trip', '##od', 'vc', '##t', '-', 'r', '##100', 'col', 'category', 'val', 'camera', 'and', 'cam', '##cor', '##der', 'accessories', 'col', 'brand', 'val', 'sony', 'col', 'model', '##no', 'val', 'vc', '##tr', '##100', 'col', 'price', 'val', '24', '.', '54', '[SEP]', 'col', 'title', 'val', 'sony', 'vc', '##t', '-', 'r', '##100', 'lightweight', 'compact', 'trip', '##od', 'with', '3', '-', 'way', 'pan', 'tilt', 'head', 'col', 'category', 'val', 'digital', 'camera', 'accessories', 'col', 'brand', 'val', 'sony', 'col', 'model', '##no', 'val', 'vc', '##tr', '##100', 'col', 'price', 'val', '24', '.', '54', '[SEP]']
+is_heads: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+y: 1
+tags: 1
+mask: tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1])
+seqlen: 90
+task_name: Structured/Walmart-Amazon
+=======================
+step: 0, task: Structured/Walmart-Amazon, loss: 0.2113749235868454
+step: 10, task: Structured/Walmart-Amazon, loss: 0.045519497245550156
+step: 20, task: Structured/Walmart-Amazon, loss: 0.06305476278066635
+step: 30, task: Structured/Walmart-Amazon, loss: 0.00684317946434021
+step: 40, task: Structured/Walmart-Amazon, loss: 0.045491576194763184
+step: 50, task: Structured/Walmart-Amazon, loss: 0.013537026941776276
+step: 60, task: Structured/Walmart-Amazon, loss: 0.04743993654847145
+step: 70, task: Structured/Walmart-Amazon, loss: 0.019863657653331757
+=========eval at epoch=8=========
+Validation:
+=============Structured/Walmart-Amazon==================
+accuracy=0.965
+precision=0.876
+recall=0.731
+f1=0.797
+======================================
+Test:
+=============Structured/Walmart-Amazon==================
+accuracy=0.964
+precision=0.884
+recall=0.710
+f1=0.787
+======================================
+=====sanity check======
+words: COL title VAL lexmark 16 black print cartridge 10n0016 COL category VAL printers COL brand VAL lexmark COL modelno VAL 10n0016 COL price VAL 28.0  [SEP] COL title VAL lexmark 16 black ink cartridge 10n0016 COL category VAL inkjet printer ink COL brand VAL lexmark COL modelno VAL 10n0016 COL price VAL 29.99 
+x: [  101  8902  2516 11748 17244 10665  2385  2304  6140 15110  2184  2078
+  8889 16048  8902  4696 11748 23557  8902  4435 11748 17244 10665  8902
+  2944  3630 11748  2184  2078  8889 16048  8902  3976 11748  2654  1012
+  1014   102  8902  2516 11748 17244 10665  2385  2304 10710 15110  2184
+  2078  8889 16048  8902  4696 11748 10710 15759 15041 10710  8902  4435
+ 11748 17244 10665  8902  2944  3630 11748  2184  2078  8889 16048  8902
+  3976 11748  2756  1012  5585   102]
+tokens: ['[CLS]', 'col', 'title', 'val', 'lex', '##mark', '16', 'black', 'print', 'cartridge', '10', '##n', '##00', '##16', 'col', 'category', 'val', 'printers', 'col', 'brand', 'val', 'lex', '##mark', 'col', 'model', '##no', 'val', '10', '##n', '##00', '##16', 'col', 'price', 'val', '28', '.', '0', '[SEP]', 'col', 'title', 'val', 'lex', '##mark', '16', 'black', 'ink', 'cartridge', '10', '##n', '##00', '##16', 'col', 'category', 'val', 'ink', '##jet', 'printer', 'ink', 'col', 'brand', 'val', 'lex', '##mark', 'col', 'model', '##no', 'val', '10', '##n', '##00', '##16', 'col', 'price', 'val', '29', '.', '99', '[SEP]']
+is_heads: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+y: 1
+tags: 1
+mask: tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+seqlen: 78
+task_name: Structured/Walmart-Amazon
+=======================
+step: 0, task: Structured/Walmart-Amazon, loss: 0.08855129778385162
+step: 10, task: Structured/Walmart-Amazon, loss: 0.2153814136981964
+step: 20, task: Structured/Walmart-Amazon, loss: 0.24946731328964233
+step: 30, task: Structured/Walmart-Amazon, loss: 0.032699234783649445
+step: 40, task: Structured/Walmart-Amazon, loss: 0.014970974065363407
+step: 50, task: Structured/Walmart-Amazon, loss: 0.04666184261441231
+step: 60, task: Structured/Walmart-Amazon, loss: 0.09730008244514465
+step: 70, task: Structured/Walmart-Amazon, loss: 0.19608551263809204
+=========eval at epoch=9=========
+Validation:
+=============Structured/Walmart-Amazon==================
+accuracy=0.962
+precision=0.848
+recall=0.725
+f1=0.782
+======================================
+Test:
+=============Structured/Walmart-Amazon==================
+accuracy=0.956
+precision=0.815
+recall=0.684
+f1=0.744
+======================================
+=====sanity check======
+words: COL title VAL usrobotics 56k usb 2.0 external modem COL category VAL networking COL brand VAL u.s. robotics COL modelno VAL usr5637 COL price VAL 47.82  [SEP] COL title VAL us robotics v. 92 external 56k faxmodem usr5686e COL category VAL modems COL brand VAL usrobotics COL modelno VAL usr5686e COL price VAL 52.99 
+x: [  101  8902  2516 11748  2149  3217 18384  6558  5179  2243 18833  1016
+  1012  1014  6327  5549  2213  8902  4696 11748 14048  8902  4435 11748
+  1057  1012  1055  1012 21331  8902  2944  3630 11748  2149  2099 26976
+ 24434  8902  3976 11748  4700  1012  6445   102  8902  2516 11748  2149
+ 21331  1058  1012  6227  6327  5179  2243  6904  2595  5302  3207  2213
+  2149  2099 26976 20842  2063  8902  4696 11748  5549  5244  8902  4435
+ 11748  2149  3217 18384  6558  8902  2944  3630 11748  2149  2099 26976
+ 20842  2063  8902  3976 11748  4720  1012  5585   102]
+tokens: ['[CLS]', 'col', 'title', 'val', 'us', '##ro', '##bot', '##ics', '56', '##k', 'usb', '2', '.', '0', 'external', 'mode', '##m', 'col', 'category', 'val', 'networking', 'col', 'brand', 'val', 'u', '.', 's', '.', 'robotics', 'col', 'model', '##no', 'val', 'us', '##r', '##56', '##37', 'col', 'price', 'val', '47', '.', '82', '[SEP]', 'col', 'title', 'val', 'us', 'robotics', 'v', '.', '92', 'external', '56', '##k', 'fa', '##x', '##mo', '##de', '##m', 'us', '##r', '##56', '##86', '##e', 'col', 'category', 'val', 'mode', '##ms', 'col', 'brand', 'val', 'us', '##ro', '##bot', '##ics', 'col', 'model', '##no', 'val', 'us', '##r', '##56', '##86', '##e', 'col', 'price', 'val', '52', '.', '99', '[SEP]']
+is_heads: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+y: 0
+tags: 0
+mask: tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1])
+seqlen: 93
+task_name: Structured/Walmart-Amazon
+=======================
+step: 0, task: Structured/Walmart-Amazon, loss: 0.018706724047660828
+step: 10, task: Structured/Walmart-Amazon, loss: 0.027163386344909668
+step: 20, task: Structured/Walmart-Amazon, loss: 0.007808223366737366
+step: 30, task: Structured/Walmart-Amazon, loss: 0.05584896728396416
+step: 40, task: Structured/Walmart-Amazon, loss: 0.08317288011312485
+step: 50, task: Structured/Walmart-Amazon, loss: 0.009938307106494904
+step: 60, task: Structured/Walmart-Amazon, loss: 0.17609678208827972
+step: 70, task: Structured/Walmart-Amazon, loss: 0.05203972011804581
+=========eval at epoch=10=========
+Validation:
+=============Structured/Walmart-Amazon==================
+accuracy=0.963
+precision=0.842
+recall=0.746
+f1=0.791
+======================================
+Test:
+=============Structured/Walmart-Amazon==================
+accuracy=0.957
+precision=0.803
+recall=0.720
+f1=0.760
+======================================
+=====sanity check======
+words: COL title VAL swingline light touch desktop 2 - or 3-hole adjustable punch COL category VAL stationery & office machinery COL brand VAL swingline COL modelno VAL 74030 COL price VAL 21.94  [SEP] COL title VAL new-swingline 74030 - 20-sheet light touch desktop two - or three-hole punch 9 32 diameter hole - swi74030 COL category VAL shredders COL brand VAL swingline COL modelno VAL  COL price VAL 49.56 
+x: [  101  8902  2516 11748  7370  4179  2422  3543 15363  1016  1011  2030
+  1017  1011  4920 26404  8595  8902  4696 11748  2276  7301  1004  2436
+ 10394  8902  4435 11748  7370  4179  8902  2944  3630 11748 25833 14142
+  8902  3976 11748  2538  1012  6365   102  8902  2516 11748  2047  1011
+  7370  4179 25833 14142  1011  2322  1011  7123  2422  3543 15363  2048
+  1011  2030  2093  1011  4920  8595  1023  3590  6705  4920  1011 25430
+  2072  2581 12740 14142  8902  4696 11748 14021  5596 13375  8902  4435
+ 11748  7370  4179  8902  2944  3630 11748  8902  3976 11748  4749  1012
+  5179   102]
+tokens: ['[CLS]', 'col', 'title', 'val', 'swing', '##line', 'light', 'touch', 'desktop', '2', '-', 'or', '3', '-', 'hole', 'adjustable', 'punch', 'col', 'category', 'val', 'station', '##ery', '&', 'office', 'machinery', 'col', 'brand', 'val', 'swing', '##line', 'col', 'model', '##no', 'val', '740', '##30', 'col', 'price', 'val', '21', '.', '94', '[SEP]', 'col', 'title', 'val', 'new', '-', 'swing', '##line', '740', '##30', '-', '20', '-', 'sheet', 'light', 'touch', 'desktop', 'two', '-', 'or', 'three', '-', 'hole', 'punch', '9', '32', 'diameter', 'hole', '-', 'sw', '##i', '##7', '##40', '##30', 'col', 'category', 'val', 'sh', '##red', '##ders', 'col', 'brand', 'val', 'swing', '##line', 'col', 'model', '##no', 'val', 'col', 'price', 'val', '49', '.', '56', '[SEP]']
+is_heads: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+y: 1
+tags: 1
+mask: tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1])
+seqlen: 98
+task_name: Structured/Walmart-Amazon
+=======================
+step: 0, task: Structured/Walmart-Amazon, loss: 0.06364639103412628
+step: 10, task: Structured/Walmart-Amazon, loss: 0.007098332047462463
+step: 20, task: Structured/Walmart-Amazon, loss: 0.09772586822509766
+step: 30, task: Structured/Walmart-Amazon, loss: 0.2092995047569275
+step: 40, task: Structured/Walmart-Amazon, loss: 0.0025277435779571533
+step: 50, task: Structured/Walmart-Amazon, loss: 0.005475260317325592
+step: 60, task: Structured/Walmart-Amazon, loss: 0.15329089760780334
+step: 70, task: Structured/Walmart-Amazon, loss: 0.02741813100874424
+=========eval at epoch=11=========
+Validation:
+=============Structured/Walmart-Amazon==================
+accuracy=0.956
+precision=0.743
+recall=0.808
+f1=0.774
+======================================
+Test:
+=============Structured/Walmart-Amazon==================
+accuracy=0.959
+precision=0.770
+recall=0.798
+f1=0.784
+======================================
+=====sanity check======
+words: COL title VAL da-lite da-glas deluxe rear projection screen - 96 x 96 av format COL category VAL electronics - general COL brand VAL da-lite COL modelno VAL 27651 COL price VAL 6128.99  [SEP] COL title VAL holoscreen rear projection screen - 66 x 101 video format COL category VAL projection screens COL brand VAL da-lite COL modelno VAL  COL price VAL 7400.0 
+x: [  101  8902  2516 11748  4830  1011  5507  2063  4830  1011  1043  8523
+ 15203  4373 13996  3898  1011  5986  1060  5986 20704  4289  8902  4696
+ 11748  8139  1011  2236  8902  4435 11748  4830  1011  5507  2063  8902
+  2944  3630 11748 25113 22203  8902  3976 11748  6079 22407  1012  5585
+   102  8902  2516 11748  7570 10483 24410  4373 13996  3898  1011  5764
+  1060  7886  2678  4289  8902  4696 11748 13996 12117  8902  4435 11748
+  4830  1011  5507  2063  8902  2944  3630 11748  8902  3976 11748 25833
+  2692  1012  1014   102]
+tokens: ['[CLS]', 'col', 'title', 'val', 'da', '-', 'lit', '##e', 'da', '-', 'g', '##las', 'deluxe', 'rear', 'projection', 'screen', '-', '96', 'x', '96', 'av', 'format', 'col', 'category', 'val', 'electronics', '-', 'general', 'col', 'brand', 'val', 'da', '-', 'lit', '##e', 'col', 'model', '##no', 'val', '276', '##51', 'col', 'price', 'val', '61', '##28', '.', '99', '[SEP]', 'col', 'title', 'val', 'ho', '##los', '##creen', 'rear', 'projection', 'screen', '-', '66', 'x', '101', 'video', 'format', 'col', 'category', 'val', 'projection', 'screens', 'col', 'brand', 'val', 'da', '-', 'lit', '##e', 'col', 'model', '##no', 'val', 'col', 'price', 'val', '740', '##0', '.', '0', '[SEP]']
+is_heads: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+y: 0
+tags: 0
+mask: tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+seqlen: 88
+task_name: Structured/Walmart-Amazon
+=======================
+step: 0, task: Structured/Walmart-Amazon, loss: 0.01918203942477703
+step: 10, task: Structured/Walmart-Amazon, loss: 0.025935426354408264
+step: 20, task: Structured/Walmart-Amazon, loss: 0.035336531698703766
+step: 30, task: Structured/Walmart-Amazon, loss: 0.04075348377227783
+step: 40, task: Structured/Walmart-Amazon, loss: 0.1800861805677414
+step: 50, task: Structured/Walmart-Amazon, loss: 0.1416478455066681
+step: 60, task: Structured/Walmart-Amazon, loss: 0.07185539603233337
+step: 70, task: Structured/Walmart-Amazon, loss: 0.008806414902210236
+=========eval at epoch=12=========
+Validation:
+=============Structured/Walmart-Amazon==================
+accuracy=0.961
+precision=0.830
+recall=0.736
+f1=0.780
+======================================
+Test:
+=============Structured/Walmart-Amazon==================
+accuracy=0.961
+precision=0.835
+recall=0.736
+f1=0.782
+======================================
+=====sanity check======
+words: COL title VAL foldio p2 leather texture folio case for ipad 2 black COL category VAL mp3 accessories COL brand VAL scosche COL modelno VAL ipd2flbk COL price VAL 44.88  [SEP] COL title VAL scosche foldio p2 black leather texture folio case for ipad 2 ipd2flbk COL category VAL laptop netbook computer accessories COL brand VAL scosche COL modelno VAL ipd2flbk COL price VAL  
+x: [  101  8902  2516 11748 10671  3695  1052  2475  5898 14902  1042 29401
+  2553  2005 25249  1016  2304  8902  4696 11748 23378 16611  8902  4435
+ 11748  8040  2891  5403  8902  2944  3630 11748 12997  2094  2475 10258
+  2497  2243  8902  3976 11748  4008  1012  6070   102  8902  2516 11748
+  8040  2891  5403 10671  3695  1052  2475  2304  5898 14902  1042 29401
+  2553  2005 25249  1016 12997  2094  2475 10258  2497  2243  8902  4696
+ 11748 12191  5658  8654  3274 16611  8902  4435 11748  8040  2891  5403
+  8902  2944  3630 11748 12997  2094  2475 10258  2497  2243  8902  3976
+ 11748   102]
+tokens: ['[CLS]', 'col', 'title', 'val', 'fold', '##io', 'p', '##2', 'leather', 'texture', 'f', '##olio', 'case', 'for', 'ipad', '2', 'black', 'col', 'category', 'val', 'mp3', 'accessories', 'col', 'brand', 'val', 'sc', '##os', '##che', 'col', 'model', '##no', 'val', 'ip', '##d', '##2', '##fl', '##b', '##k', 'col', 'price', 'val', '44', '.', '88', '[SEP]', 'col', 'title', 'val', 'sc', '##os', '##che', 'fold', '##io', 'p', '##2', 'black', 'leather', 'texture', 'f', '##olio', 'case', 'for', 'ipad', '2', 'ip', '##d', '##2', '##fl', '##b', '##k', 'col', 'category', 'val', 'laptop', 'net', '##book', 'computer', 'accessories', 'col', 'brand', 'val', 'sc', '##os', '##che', 'col', 'model', '##no', 'val', 'ip', '##d', '##2', '##fl', '##b', '##k', 'col', 'price', 'val', '[SEP]']
+is_heads: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+y: 1
+tags: 1
+mask: tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1])
+seqlen: 98
+task_name: Structured/Walmart-Amazon
+=======================
+step: 0, task: Structured/Walmart-Amazon, loss: 0.008310303092002869
+step: 10, task: Structured/Walmart-Amazon, loss: 0.0162081029266119
+step: 20, task: Structured/Walmart-Amazon, loss: 0.030449822545051575
+step: 30, task: Structured/Walmart-Amazon, loss: 0.35496264696121216
+step: 40, task: Structured/Walmart-Amazon, loss: 0.04666339233517647
+step: 50, task: Structured/Walmart-Amazon, loss: 0.009611770510673523
+step: 60, task: Structured/Walmart-Amazon, loss: 0.006564617156982422
+step: 70, task: Structured/Walmart-Amazon, loss: 0.047277502715587616
+=========eval at epoch=13=========
+Validation:
+=============Structured/Walmart-Amazon==================
+accuracy=0.963
+precision=0.831
+recall=0.767
+f1=0.798
+======================================
+Test:
+=============Structured/Walmart-Amazon==================
+accuracy=0.961
+precision=0.843
+recall=0.725
+f1=0.780
+======================================
+=====sanity check======
+words: COL title VAL scosche 1995-97 general motors sonoma chevrolet s10 rack kit color match COL category VAL car stereos COL brand VAL scosche COL modelno VAL gm1515b COL price VAL 9.88  [SEP] COL title VAL scosche gm1515b s10 rack kit for 1995-97 general motors sonoma chevrolet COL category VAL power-cable terminals COL brand VAL scosche COL modelno VAL gm1515b COL price VAL 9.88 
+x: [  101  8902  2516 11748  8040  2891  5403  2786  1011  5989  2236  9693
+  2365  9626 14724  1055 10790 14513  8934  3609  2674  8902  4696 11748
+  2482 12991  2015  8902  4435 11748  8040  2891  5403  8902  2944  3630
+ 11748 13938 16068 16068  2497  8902  3976 11748  1023  1012  6070   102
+  8902  2516 11748  8040  2891  5403 13938 16068 16068  2497  1055 10790
+ 14513  8934  2005  2786  1011  5989  2236  9693  2365  9626 14724  8902
+  4696 11748  2373  1011  5830 17703  8902  4435 11748  8040  2891  5403
+  8902  2944  3630 11748 13938 16068 16068  2497  8902  3976 11748  1023
+  1012  6070   102]
+tokens: ['[CLS]', 'col', 'title', 'val', 'sc', '##os', '##che', '1995', '-', '97', 'general', 'motors', 'son', '##oma', 'chevrolet', 's', '##10', 'rack', 'kit', 'color', 'match', 'col', 'category', 'val', 'car', 'stereo', '##s', 'col', 'brand', 'val', 'sc', '##os', '##che', 'col', 'model', '##no', 'val', 'gm', '##15', '##15', '##b', 'col', 'price', 'val', '9', '.', '88', '[SEP]', 'col', 'title', 'val', 'sc', '##os', '##che', 'gm', '##15', '##15', '##b', 's', '##10', 'rack', 'kit', 'for', '1995', '-', '97', 'general', 'motors', 'son', '##oma', 'chevrolet', 'col', 'category', 'val', 'power', '-', 'cable', 'terminals', 'col', 'brand', 'val', 'sc', '##os', '##che', 'col', 'model', '##no', 'val', 'gm', '##15', '##15', '##b', 'col', 'price', 'val', '9', '.', '88', '[SEP]']
+is_heads: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+y: 1
+tags: 1
+mask: tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+seqlen: 99
+task_name: Structured/Walmart-Amazon
+=======================
+step: 0, task: Structured/Walmart-Amazon, loss: 0.01263377070426941
+step: 10, task: Structured/Walmart-Amazon, loss: 0.005858294665813446
+step: 20, task: Structured/Walmart-Amazon, loss: 0.00789603590965271
+step: 30, task: Structured/Walmart-Amazon, loss: 0.19033017754554749
+step: 40, task: Structured/Walmart-Amazon, loss: 0.1686946451663971
+step: 50, task: Structured/Walmart-Amazon, loss: 0.07008092850446701
+step: 60, task: Structured/Walmart-Amazon, loss: 0.15960220992565155
+step: 70, task: Structured/Walmart-Amazon, loss: 0.02835971862077713
+=========eval at epoch=14=========
+Validation:
+=============Structured/Walmart-Amazon==================
+accuracy=0.966
+precision=0.892
+recall=0.725
+f1=0.800
+======================================
+Test:
+=============Structured/Walmart-Amazon==================
+accuracy=0.962
+precision=0.872
+recall=0.705
+f1=0.779
+======================================
+=====sanity check======
+words: COL title VAL crown needle rib wipe scrape polypropylene mat 36 x 120 gray COL category VAL home care COL brand VAL crown COL modelno VAL nr0310gy COL price VAL 102.97  [SEP] COL title VAL new-crown nr0310gy - needle rib wipe scrape mat polypropylene 36 x 120 gray - cwnnr0310gy COL category VAL laminating supplies COL brand VAL crown COL modelno VAL  COL price VAL 143.0 
+x: [  101  8902  2516 11748  4410 12201 19395 13387 26988 26572 21572  7685
+ 11474 13523  4029  1060  6036  3897  8902  4696 11748  2188  2729  8902
+  4435 11748  4410  8902  2944  3630 11748 17212  2692 21486  2692  6292
+  8902  3976 11748  9402  1012  5989   102  8902  2516 11748  2047  1011
+  4410 17212  2692 21486  2692  6292  1011 12201 19395 13387 26988 13523
+ 26572 21572  7685 11474  4029  1060  6036  3897  1011 19296 10695  2099
+  2692 21486  2692  6292  8902  4696 11748 16983 19185  6067  8902  4435
+ 11748  4410  8902  2944  3630 11748  8902  3976 11748 16065  1012  1014
+   102]
+tokens: ['[CLS]', 'col', 'title', 'val', 'crown', 'needle', 'rib', 'wipe', 'scrape', 'poly', '##pro', '##py', '##lene', 'mat', '36', 'x', '120', 'gray', 'col', 'category', 'val', 'home', 'care', 'col', 'brand', 'val', 'crown', 'col', 'model', '##no', 'val', 'nr', '##0', '##31', '##0', '##gy', 'col', 'price', 'val', '102', '.', '97', '[SEP]', 'col', 'title', 'val', 'new', '-', 'crown', 'nr', '##0', '##31', '##0', '##gy', '-', 'needle', 'rib', 'wipe', 'scrape', 'mat', 'poly', '##pro', '##py', '##lene', '36', 'x', '120', 'gray', '-', 'cw', '##nn', '##r', '##0', '##31', '##0', '##gy', 'col', 'category', 'val', 'lam', '##inating', 'supplies', 'col', 'brand', 'val', 'crown', 'col', 'model', '##no', 'val', 'col', 'price', 'val', '143', '.', '0', '[SEP]']
+is_heads: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+y: 1
+tags: 1
+mask: tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1])
+seqlen: 97
+task_name: Structured/Walmart-Amazon
+=======================
+step: 0, task: Structured/Walmart-Amazon, loss: 0.21207351982593536
+step: 10, task: Structured/Walmart-Amazon, loss: 0.09350688755512238
+step: 20, task: Structured/Walmart-Amazon, loss: 0.04047307372093201
+step: 30, task: Structured/Walmart-Amazon, loss: 0.009339369833469391
+step: 40, task: Structured/Walmart-Amazon, loss: 0.006586648523807526
+step: 50, task: Structured/Walmart-Amazon, loss: 0.01612987369298935
+step: 60, task: Structured/Walmart-Amazon, loss: 0.016685180366039276
+step: 70, task: Structured/Walmart-Amazon, loss: 0.2611269950866699
+=========eval at epoch=15=========
+Validation:
+=============Structured/Walmart-Amazon==================
+accuracy=0.963
+precision=0.860
+recall=0.731
+f1=0.790
+======================================
+Test:
+=============Structured/Walmart-Amazon==================
+accuracy=0.961
+precision=0.847
+recall=0.715
+f1=0.775
+======================================
+=====sanity check======
+words: COL title VAL casio exilim ex-zs10 14.1 mp digital camera black w 5x optical zoom 2.7 lcd display COL category VAL digital cameras COL brand VAL casio COL modelno VAL ex-zs10bk COL price VAL 120.0  [SEP] COL title VAL casio exilim ex-zs10 black 14 mp stylish and slim digital camera with 5x wide-angle zoom and 720p hd video capture COL category VAL point shoot digital cameras COL brand VAL casio COL modelno VAL ex-zs10 black COL price VAL  
+x: [  101  8902  2516 11748 25222  3695  4654 18622  2213  4654  1011  1062
+  2015 10790  2403  1012  1015  6131  3617  4950  2304  1059  1019  2595
+  9380 24095  1016  1012  1021 27662  4653  8902  4696 11748  3617  8629
+  8902  4435 11748 25222  3695  8902  2944  3630 11748  4654  1011  1062
+  2015 10790  2497  2243  8902  3976 11748  6036  1012  1014   102  8902
+  2516 11748 25222  3695  4654 18622  2213  4654  1011  1062  2015 10790
+  2304  2403  6131  2358  8516  4509  1998 11754  3617  4950  2007  1019
+  2595  2898  1011  6466 24095  1998 22857  2361 10751  2678  5425  8902
+  4696 11748  2391  5607  3617  8629  8902  4435 11748 25222  3695  8902
+  2944  3630 11748  4654  1011  1062  2015 10790  2304  8902  3976 11748
+   102]
+tokens: ['[CLS]', 'col', 'title', 'val', 'cas', '##io', 'ex', '##ili', '##m', 'ex', '-', 'z', '##s', '##10', '14', '.', '1', 'mp', 'digital', 'camera', 'black', 'w', '5', '##x', 'optical', 'zoom', '2', '.', '7', 'lcd', 'display', 'col', 'category', 'val', 'digital', 'cameras', 'col', 'brand', 'val', 'cas', '##io', 'col', 'model', '##no', 'val', 'ex', '-', 'z', '##s', '##10', '##b', '##k', 'col', 'price', 'val', '120', '.', '0', '[SEP]', 'col', 'title', 'val', 'cas', '##io', 'ex', '##ili', '##m', 'ex', '-', 'z', '##s', '##10', 'black', '14', 'mp', 'st', '##yl', '##ish', 'and', 'slim', 'digital', 'camera', 'with', '5', '##x', 'wide', '-', 'angle', 'zoom', 'and', '720', '##p', 'hd', 'video', 'capture', 'col', 'category', 'val', 'point', 'shoot', 'digital', 'cameras', 'col', 'brand', 'val', 'cas', '##io', 'col', 'model', '##no', 'val', 'ex', '-', 'z', '##s', '##10', 'black', 'col', 'price', 'val', '[SEP]']
+is_heads: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+y: 1
+tags: 1
+mask: tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1])
+seqlen: 121
+task_name: Structured/Walmart-Amazon
+=======================
+step: 0, task: Structured/Walmart-Amazon, loss: 0.007173329591751099
+step: 10, task: Structured/Walmart-Amazon, loss: 0.009932086803019047
+step: 20, task: Structured/Walmart-Amazon, loss: 0.13861015439033508
+step: 30, task: Structured/Walmart-Amazon, loss: 0.23536789417266846
+step: 40, task: Structured/Walmart-Amazon, loss: 0.013555839657783508
+step: 50, task: Structured/Walmart-Amazon, loss: 0.002668902277946472
+step: 60, task: Structured/Walmart-Amazon, loss: 0.0018917620182037354
+step: 70, task: Structured/Walmart-Amazon, loss: 0.0045826733112335205
+=========eval at epoch=16=========
+Validation:
+=============Structured/Walmart-Amazon==================
+accuracy=0.960
+precision=0.782
+recall=0.798
+f1=0.790
+======================================
+Test:
+=============Structured/Walmart-Amazon==================
+accuracy=0.962
+precision=0.801
+recall=0.793
+f1=0.797
+======================================
+=====sanity check======
+words: COL title VAL plantronics usb-to-headset adapter COL category VAL electronics - general COL brand VAL plantronics COL modelno VAL da-40 COL price VAL 27.98  [SEP] COL title VAL plantronics headset to usb adapter da40 COL category VAL accessories supplies COL brand VAL plantronics COL modelno VAL da40 COL price VAL 27.98 
+x: [  101  8902  2516 11748  3269  4948  6558 18833  1011  2000  1011  4641
+  3388 15581  2121  8902  4696 11748  8139  1011  2236  8902  4435 11748
+  3269  4948  6558  8902  2944  3630 11748  4830  1011  2871  8902  3976
+ 11748  2676  1012  5818   102  8902  2516 11748  3269  4948  6558  4641
+  3388  2000 18833 15581  2121  4830 12740  8902  4696 11748 16611  6067
+  8902  4435 11748  3269  4948  6558  8902  2944  3630 11748  4830 12740
+  8902  3976 11748  2676  1012  5818   102]
+tokens: ['[CLS]', 'col', 'title', 'val', 'plant', '##ron', '##ics', 'usb', '-', 'to', '-', 'heads', '##et', 'adapt', '##er', 'col', 'category', 'val', 'electronics', '-', 'general', 'col', 'brand', 'val', 'plant', '##ron', '##ics', 'col', 'model', '##no', 'val', 'da', '-', '40', 'col', 'price', 'val', '27', '.', '98', '[SEP]', 'col', 'title', 'val', 'plant', '##ron', '##ics', 'heads', '##et', 'to', 'usb', 'adapt', '##er', 'da', '##40', 'col', 'category', 'val', 'accessories', 'supplies', 'col', 'brand', 'val', 'plant', '##ron', '##ics', 'col', 'model', '##no', 'val', 'da', '##40', 'col', 'price', 'val', '27', '.', '98', '[SEP]']
+is_heads: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+y: 1
+tags: 1
+mask: tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+seqlen: 79
+task_name: Structured/Walmart-Amazon
+=======================
+step: 0, task: Structured/Walmart-Amazon, loss: 0.01455359160900116
+step: 10, task: Structured/Walmart-Amazon, loss: 0.007197670638561249
+step: 20, task: Structured/Walmart-Amazon, loss: 0.012366101145744324
+step: 30, task: Structured/Walmart-Amazon, loss: 0.006080202758312225
+step: 40, task: Structured/Walmart-Amazon, loss: 0.005174711346626282
+step: 50, task: Structured/Walmart-Amazon, loss: 0.013531431555747986
+step: 60, task: Structured/Walmart-Amazon, loss: 0.0035543590784072876
+step: 70, task: Structured/Walmart-Amazon, loss: 0.01502721756696701
+=========eval at epoch=17=========
+Validation:
+=============Structured/Walmart-Amazon==================
+accuracy=0.960
+precision=0.825
+recall=0.731
+f1=0.775
+======================================
+Test:
+=============Structured/Walmart-Amazon==================
+accuracy=0.963
+precision=0.846
+recall=0.741
+f1=0.790
+======================================
+=====sanity check======
+words: COL title VAL smead file folders 1 2 cut 1-ply top tab manila 100 box COL category VAL stationery & office machinery COL brand VAL  COL modelno VAL 15320 COL price VAL 34.05  [SEP] COL title VAL smead 10510 - tear moisture-resist poly file folders 1 3 cut top tab letter manila 12 pack COL category VAL printer accessories COL brand VAL smead COL modelno VAL  COL price VAL  
+x: [  101  8902  2516 11748 15488 13775  5371 19622  2015  1015  1016  3013
+  1015  1011 20228  2100  2327 21628  9011  2531  3482  8902  4696 11748
+  2276  7301  1004  2436 10394  8902  4435 11748  8902  2944  3630 11748
+ 16710 11387  8902  3976 11748  4090  1012  5709   102  8902  2516 11748
+ 15488 13775  8746 10790  1011  7697 14098  1011  9507 26572  5371 19622
+  2015  1015  1017  3013  2327 21628  3661  9011  2260  5308  8902  4696
+ 11748 15041 16611  8902  4435 11748 15488 13775  8902  2944  3630 11748
+  8902  3976 11748   102]
+tokens: ['[CLS]', 'col', 'title', 'val', 'sm', '##ead', 'file', 'folder', '##s', '1', '2', 'cut', '1', '-', 'pl', '##y', 'top', 'tab', 'manila', '100', 'box', 'col', 'category', 'val', 'station', '##ery', '&', 'office', 'machinery', 'col', 'brand', 'val', 'col', 'model', '##no', 'val', '153', '##20', 'col', 'price', 'val', '34', '.', '05', '[SEP]', 'col', 'title', 'val', 'sm', '##ead', '105', '##10', '-', 'tear', 'moisture', '-', 'resist', 'poly', 'file', 'folder', '##s', '1', '3', 'cut', 'top', 'tab', 'letter', 'manila', '12', 'pack', 'col', 'category', 'val', 'printer', 'accessories', 'col', 'brand', 'val', 'sm', '##ead', 'col', 'model', '##no', 'val', 'col', 'price', 'val', '[SEP]']
+is_heads: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+y: 0
+tags: 0
+mask: tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+seqlen: 88
+task_name: Structured/Walmart-Amazon
+=======================
+step: 0, task: Structured/Walmart-Amazon, loss: 0.07201866805553436
+step: 10, task: Structured/Walmart-Amazon, loss: 0.015603408217430115
+step: 20, task: Structured/Walmart-Amazon, loss: 0.05407270789146423
+step: 30, task: Structured/Walmart-Amazon, loss: 0.0044148266315460205
+step: 40, task: Structured/Walmart-Amazon, loss: 0.03603197634220123
+step: 50, task: Structured/Walmart-Amazon, loss: 0.003965720534324646
+step: 60, task: Structured/Walmart-Amazon, loss: 0.0025593789760023355
+step: 70, task: Structured/Walmart-Amazon, loss: 0.0016229599714279175
+=========eval at epoch=18=========
+Validation:
+=============Structured/Walmart-Amazon==================
+accuracy=0.960
+precision=0.785
+recall=0.793
+f1=0.789
+======================================
+Test:
+=============Structured/Walmart-Amazon==================
+accuracy=0.963
+precision=0.804
+recall=0.808
+f1=0.806
+======================================
+=====sanity check======
+words: COL title VAL startech.com sat3510bu2v usb to sata external hard drive enclosure COL category VAL electronics - general COL brand VAL startech COL modelno VAL sat3510bu2v COL price VAL 28.88  [SEP] COL title VAL startech.com 3.5-inch esata usb trayless sata usb 2.0 external hard drive enclosure sat3510bu2e black COL category VAL hard drive bags COL brand VAL startech COL modelno VAL sat3510bu2e COL price VAL 40.56 
+x: [  101  8902  2516 11748  2707 15937  1012  4012  2938 19481 10790  8569
+  2475  2615 18833  2000  2938  2050  6327  2524  3298 17539  8902  4696
+ 11748  8139  1011  2236  8902  4435 11748  2707 15937  8902  2944  3630
+ 11748  2938 19481 10790  8569  2475  2615  8902  3976 11748  2654  1012
+  6070   102  8902  2516 11748  2707 15937  1012  4012  1017  1012  1019
+  1011  4960 28776  2696 18833 11851  3238  2938  2050 18833  1016  1012
+  1014  6327  2524  3298 17539  2938 19481 10790  8569  2475  2063  2304
+  8902  4696 11748  2524  3298  8641  8902  4435 11748  2707 15937  8902
+  2944  3630 11748  2938 19481 10790  8569  2475  2063  8902  3976 11748
+  2871  1012  5179   102]
+tokens: ['[CLS]', 'col', 'title', 'val', 'start', '##ech', '.', 'com', 'sat', '##35', '##10', '##bu', '##2', '##v', 'usb', 'to', 'sat', '##a', 'external', 'hard', 'drive', 'enclosure', 'col', 'category', 'val', 'electronics', '-', 'general', 'col', 'brand', 'val', 'start', '##ech', 'col', 'model', '##no', 'val', 'sat', '##35', '##10', '##bu', '##2', '##v', 'col', 'price', 'val', '28', '.', '88', '[SEP]', 'col', 'title', 'val', 'start', '##ech', '.', 'com', '3', '.', '5', '-', 'inch', 'esa', '##ta', 'usb', 'tray', '##less', 'sat', '##a', 'usb', '2', '.', '0', 'external', 'hard', 'drive', 'enclosure', 'sat', '##35', '##10', '##bu', '##2', '##e', 'black', 'col', 'category', 'val', 'hard', 'drive', 'bags', 'col', 'brand', 'val', 'start', '##ech', 'col', 'model', '##no', 'val', 'sat', '##35', '##10', '##bu', '##2', '##e', 'col', 'price', 'val', '40', '.', '56', '[SEP]']
+is_heads: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+y: 0
+tags: 0
+mask: tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1])
+seqlen: 112
+task_name: Structured/Walmart-Amazon
+=======================
+step: 0, task: Structured/Walmart-Amazon, loss: 0.1813933253288269
+step: 10, task: Structured/Walmart-Amazon, loss: 0.007034264504909515
+step: 20, task: Structured/Walmart-Amazon, loss: 0.08545507490634918
+step: 30, task: Structured/Walmart-Amazon, loss: 0.005998142063617706
+step: 40, task: Structured/Walmart-Amazon, loss: 0.0018199384212493896
+step: 50, task: Structured/Walmart-Amazon, loss: 0.009429045021533966
+step: 60, task: Structured/Walmart-Amazon, loss: 0.028306622058153152
+step: 70, task: Structured/Walmart-Amazon, loss: 0.04093535989522934
+=========eval at epoch=19=========
+Validation:
+=============Structured/Walmart-Amazon==================
+accuracy=0.962
+precision=0.836
+recall=0.741
+f1=0.786
+======================================
+Test:
+=============Structured/Walmart-Amazon==================
+accuracy=0.964
+precision=0.845
+recall=0.762
+f1=0.801
+======================================
+=====sanity check======
+words: COL title VAL buffalo technology ministation metro 1 tb usb 2.0 portable external hard drive with integrated flex cable encryption and turbopc hd-pxt1tu2 b black COL category VAL hard drives COL brand VAL buffalo technology COL modelno VAL hdpxt1tu2b COL price VAL 99.82  [SEP] COL title VAL buffalo technology juststore portable 500 gb usb 2.0 ultra-slim portable external hard drive hd-pv500u2 bk black COL category VAL external hard drives COL brand VAL buffalo technology COL modelno VAL hd-pv500u2 / bk COL price VAL  
+x: [  101  8902  2516 11748  6901  2974  7163 20100  6005  1015 26419 18833
+  1016  1012  1014 12109  6327  2524  3298  2007  6377 23951  5830 21999
+  1998 15386 15042 10751  1011  1052 18413  2487  8525  2475  1038  2304
+  8902  4696 11748  2524  9297  8902  4435 11748  6901  2974  8902  2944
+  3630 11748 10751  2361 18413  2487  8525  2475  2497  8902  3976 11748
+  5585  1012  6445   102  8902  2516 11748  6901  2974  2074 23809  2063
+ 12109  3156 16351 18833  1016  1012  1014 11087  1011 11754 12109  6327
+  2524  3298 10751  1011 26189 29345  2226  2475 23923  2304  8902  4696
+ 11748  6327  2524  9297  8902  4435 11748  6901  2974  8902  2944  3630
+ 11748 10751  1011 26189 29345  2226  2475  1013 23923  8902  3976 11748
+   102]
+tokens: ['[CLS]', 'col', 'title', 'val', 'buffalo', 'technology', 'mini', '##station', 'metro', '1', 'tb', 'usb', '2', '.', '0', 'portable', 'external', 'hard', 'drive', 'with', 'integrated', 'flex', 'cable', 'encryption', 'and', 'turbo', '##pc', 'hd', '-', 'p', '##xt', '##1', '##tu', '##2', 'b', 'black', 'col', 'category', 'val', 'hard', 'drives', 'col', 'brand', 'val', 'buffalo', 'technology', 'col', 'model', '##no', 'val', 'hd', '##p', '##xt', '##1', '##tu', '##2', '##b', 'col', 'price', 'val', '99', '.', '82', '[SEP]', 'col', 'title', 'val', 'buffalo', 'technology', 'just', '##stor', '##e', 'portable', '500', 'gb', 'usb', '2', '.', '0', 'ultra', '-', 'slim', 'portable', 'external', 'hard', 'drive', 'hd', '-', 'pv', '##500', '##u', '##2', 'bk', 'black', 'col', 'category', 'val', 'external', 'hard', 'drives', 'col', 'brand', 'val', 'buffalo', 'technology', 'col', 'model', '##no', 'val', 'hd', '-', 'pv', '##500', '##u', '##2', '/', 'bk', 'col', 'price', 'val', '[SEP]']
+is_heads: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+y: 0
+tags: 0
+mask: tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+seqlen: 121
+task_name: Structured/Walmart-Amazon
+=======================
+step: 0, task: Structured/Walmart-Amazon, loss: 0.0036550608929246664
+step: 10, task: Structured/Walmart-Amazon, loss: 0.005356103181838989
+step: 20, task: Structured/Walmart-Amazon, loss: 0.017468221485614777
+step: 30, task: Structured/Walmart-Amazon, loss: 0.004720643162727356
+step: 40, task: Structured/Walmart-Amazon, loss: 0.02727266028523445
+step: 50, task: Structured/Walmart-Amazon, loss: 0.010015293955802917
+step: 60, task: Structured/Walmart-Amazon, loss: 0.006953857839107513
+step: 70, task: Structured/Walmart-Amazon, loss: 0.013494409620761871
+=========eval at epoch=20=========
+Validation:
+=============Structured/Walmart-Amazon==================
+accuracy=0.961
+precision=0.816
+recall=0.756
+f1=0.785
+======================================
+Test:
+=============Structured/Walmart-Amazon==================
+accuracy=0.964
+precision=0.840
+recall=0.762
+f1=0.799
+======================================

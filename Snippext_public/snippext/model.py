@@ -194,27 +194,52 @@ class MultiTaskNet(nn.Module):
 
             logits = fc(pooled_output)
 
-            # Lokesh: Compute the logits with attention aggregated embeddings
-            variational_attn = var_fc(output[0])
-            variational_attn = torch.sigmoid(variational_attn)
-            variational_attn = variational_attn.reshape((variational_attn.shape[0], 
-                                            variational_attn.shape[2], variational_attn.shape[1]))
-            variational_emb = torch.matmul(variational_attn, output[0])
-            variational_emb = variational_emb.squeeze(dim=1)
+
+            # This is for the case study where we aggregate only based on y_self_sup
+            # print(f"output: {output[0].shape}, output_aug: {output_aug[0].shape}")
+            all_enc = output[0]
+            if augment_batch != None:
+                all_enc = torch.cat([output[0], output_aug[0]], axis=0)
+            # y_self_sup_temp = y_self_sup.unsqueeze(dim=1)
+            # print(f"all_enc {all_enc.shape}, y_self_sup: {y_self_sup.shape}")
+            # variational_emb = torch.matmul(y_self_sup_temp, all_enc)
+            variational_emb = torch.einsum('ijk,ij->ik', all_enc, y_self_sup)
+            # variational_emb = variational_emb.squeeze(dim=1)
             variational_emb = variational_emb / torch.norm(variational_emb, dim=0)
 
-
-            # Lokesh: Compute variational embedding also as a convex combination
+            # Lokesh: Combine the variational_emb to match the original and augment batches
             if augment_batch != None:
-                variational_attn_aug = var_fc(output_aug[0])
-                variational_attn_aug = torch.sigmoid(variational_attn_aug)
-                variational_attn_aug = variational_attn_aug.reshape((variational_attn_aug.shape[0], 
-                                                variational_attn_aug.shape[2], variational_attn_aug.shape[1]))
-                variational_emb_aug = torch.matmul(variational_attn_aug, output_aug[0])
-                variational_emb_aug = variational_emb_aug.squeeze(dim=1)
-                variational_emb_aug = variational_emb_aug / torch.norm(variational_emb_aug, dim=0)
+                variational_emb = (aug_lam * variational_emb[:aug_x.shape[0]]) + \
+                                    ((1-aug_lam) * variational_emb[aug_x.shape[0]:]) 
 
-                variational_emb = (variational_emb * aug_lam) + ((1-aug_lam) * variational_emb_aug) 
+            # print(f"Final experiment variational_emb shape is : {variational_emb.shape}")
+
+            # Lokesh: For this experiment variational_attn is meaningless
+            variational_attn = torch.rand(2)
+            variational_attn_aug = torch.rand(2)
+
+
+            # # Lokesh: Compute the logits with attention aggregated embeddings
+            # variational_attn = var_fc(output[0])
+            # variational_attn = torch.sigmoid(variational_attn)
+            # variational_attn = variational_attn.reshape((variational_attn.shape[0], 
+            #                                 variational_attn.shape[2], variational_attn.shape[1]))
+            # variational_emb = torch.matmul(variational_attn, output[0])
+            # variational_emb = variational_emb.squeeze(dim=1)
+            # variational_emb = variational_emb / torch.norm(variational_emb, dim=0)
+
+
+            # # Lokesh: Compute variational embedding also as a convex combination
+            # if augment_batch != None:
+            #     variational_attn_aug = var_fc(output_aug[0])
+            #     variational_attn_aug = torch.sigmoid(variational_attn_aug)
+            #     variational_attn_aug = variational_attn_aug.reshape((variational_attn_aug.shape[0], 
+            #                                     variational_attn_aug.shape[2], variational_attn_aug.shape[1]))
+            #     variational_emb_aug = torch.matmul(variational_attn_aug, output_aug[0])
+            #     variational_emb_aug = variational_emb_aug.squeeze(dim=1)
+            #     variational_emb_aug = variational_emb_aug / torch.norm(variational_emb_aug, dim=0)
+
+            #     variational_emb = (variational_emb * aug_lam) + ((1-aug_lam) * variational_emb_aug) 
 
 
             variational_emb = torch.cat([pooled_output, variational_emb], dim=1)

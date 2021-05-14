@@ -80,14 +80,14 @@ def mixda(model, batch, alpha_aug=0.4):
     loss = criterion(logits, y) * aug_lam + \
            criterion(logits, aug_y) * (1 - aug_lam)
 
-    mask = torch.Tensor(mask.float()).to("cuda")
-    self_sup_loss = variation_attn_criterion(y_self_sup, variational_attn.squeeze() * mask)
-    self_sup_loss = torch.mean(self_sup_loss)
+    # mask = torch.Tensor(mask.float()).to("cuda")
+    # self_sup_loss = variation_attn_criterion(y_self_sup, variational_attn.squeeze() * mask)
+    # self_sup_loss = torch.mean(self_sup_loss)
 
 
-    # Lokesh: change alpha here for sensitivity analysis
-    alpha = 0
-    loss = loss + (alpha * self_sup_loss)
+    # # Lokesh: change alpha here for sensitivity analysis
+    # alpha = 0
+    # loss = loss + (alpha * self_sup_loss)
 
     return loss
 

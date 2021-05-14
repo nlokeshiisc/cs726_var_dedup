@@ -103,9 +103,9 @@ def eval_classifier(model, iterator, threshold=None, get_threshold=False):
     with torch.no_grad():
         for i, batch in enumerate(iterator):
             # Lokesh, adjust these according to new changes
-            _, x, _, _, _, y, _, _, taskname = batch
+            _, x, _, _, _, y, y_self_sup, _, taskname = batch
             taskname = taskname[0]
-            logits, y1, y_hat, _, _ = model(x, y, task=taskname)
+            logits, y1, y_hat, _, _ = model(x, y, y_self_sup, task=taskname)
             logits = logits.view(-1, logits.shape[-1])
             y1 = y1.view(-1)
             if 'sts-b' in taskname.lower():
